@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST" action="/update/{{ student.id }}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                <input name="sid" required value="{{ student.sid }}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="sname" required value="{{ student.sname }}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="sage" required value="{{ student.sage }}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="scity" required value="{{ student.scity }}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="sclass" required value="{{ student.sclass }}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Update</button>
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
